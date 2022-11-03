@@ -8,6 +8,11 @@ pool:
 
 variables:
   buildConfiguration: 'Release'
+  ${{if eq( variables['Build.Repository.Name'], 'mslearn-tailspin-spacegame-web') }}:
+    coincide: 'yes'
+  ${{ else }}:
+    coincide: 'no furula'
+  
 
 steps:
 - task: UseDotNet@2
@@ -27,6 +32,9 @@ steps:
 
 - script: 'echo $(Build.Repository.Name)'
   displayName: 'Nombre del repo'
+
+- script: 'echo funciona $(coincide)'
+  displayName: 'Evaluando condicion'
 
 - task: gulp@1
   displayName: 'Run gulp tasks'
