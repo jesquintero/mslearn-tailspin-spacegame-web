@@ -8,7 +8,7 @@ pool:
 
 variables:
   buildConfiguration: 'Release'
-  ${{if eq( variables['Build.Repository.Name'], 'mslearn-tailspin-spacegame-web') }}:
+  ${{if eq( variables['Build.Repository.Name'], 'jesquintero/mslearn-tailspin-spacegame-web') }}:
     coincide: 'yes'
   ${{ else }}:
     coincide: 'no furula'
